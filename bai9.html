@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<label> <input id="input1" type="text" > </label>
+<label> <input id="input2" type="text" > </label>
+<button id="button1" type="button" onclick="add_element1()"> Add Array A</button>
+<button id="button2" type="button" onclick="add_element2()"> Add Array B</button>
+<button id="button3" type="button" onclick="add_element3()"> Add Array C</button>
+<button id="button4" type="button" onclick="DisplayA()"> Display A</button>
+<button id="button5" type="button" onclick="DisplayB()"> Display B</button>
+<button id="button6" type="button" onclick="DisplayC()"> Display C</button>
+<button id="button7" type="button" onclick="joinChuoi1()"> Join Chuoi </button>
+
+<div id="result1" ></div>
+<div id="result2" ></div>
+<div id="result3" ></div>
+<div id="resultC" ></div>
+
+<script>
+    let x =0;
+    let y = 0;
+    let z = 0;
+    let array1 = [];
+    let array2 = [];
+    let array3 = [];
+
+    function add_element1(){
+        array1[x]=  +document.getElementById('input1').value;
+        // alert('So '+ array[x] + 'duoc them vao vi tri'+ x);
+        x++;
+            document.getElementById('input1').value='';
+    }
+    console.log(array1);
+    function add_element2(){
+        array2[y] = document.getElementById('input1').value;
+        y++;
+        document.getElementById('input1').value='';
+    }
+    console.log(array2);
+    function add_element3(){
+        array3[z]= document.getElementById('input1').value;
+        z++;
+        document.getElementById('input1').value='';
+    }
+
+    function DisplayA(){
+        let e = '<hr/>';
+        for (let i = 0; i < array1.length; i++){
+            e += 'Vi tri' + i + '='+ array1[i] + '<br/>';
+        }
+        document.getElementById('result1').innerHTML=e;
+    }
+
+    function DisplayB(){
+        let f = '<hr/>';
+        for (let j = 0; j < array2.length; j++){
+            f += 'vi tri'+ j+ '='+ array2[j] + '<br/>';
+        }
+        document.getElementById('result2').innerHTML=f;
+    } console.log(array2)
+    function DisplayC() {
+        let g = '<hr/>';
+        for (let j = 0; j < array3.length; j++) {
+            g += 'vi tri' + j + '=' + array3[j] + '<br/>';
+        }
+        document.getElementById('result3').innerHTML = g;
+    }
+
+
+    function joinChuoi1(){
+        let array4 = array3.concat(array1,array2);
+        document.getElementById('resultC').innerHTML= 'Ham sau khi noi: '+ array4;
+
+
+    }
+</script>
+
+
+</body>
+</html>
